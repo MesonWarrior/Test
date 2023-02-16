@@ -1,23 +1,22 @@
 import { useState } from 'react';
-import { useSelectContext } from '../../contexts/select-context';
 import classNames from 'classnames';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Controls } from './controls';
 import s from './styles.module.scss';
+import { observer } from 'mobx-react-lite';
+import { treeStore } from '../../stores/tree-store';
 
-export const TreeNode = ({ id, name, children, isRoot = false }) => {
-    const { select, setSelect } = useSelectContext();
-
+export const TreeNode = observer(({ id, name, children, isRoot = false }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleHandler = () => {
-        setSelect(id);
+        treeStore.setSelected(id);
         setIsOpen((value) => !value);
     };
 
     const isHasChildren = !!children?.length;
 
-    const isSelected = id === select;
+    const isSelected = id === treeStore.selected;
 
     return (
         <div className={s.node}>
@@ -53,4 +52,4 @@ export const TreeNode = ({ id, name, children, isRoot = false }) => {
             </div>
         </div>
     );
-};
+});

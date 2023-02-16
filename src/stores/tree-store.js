@@ -1,10 +1,11 @@
-import { makeObservable, observable, runInAction } from 'mobx';
+import { action, makeObservable, observable, runInAction } from 'mobx';
 import { createNode, deleteNode, getTree, renameNode } from '../api/tree';
 import { toast } from 'react-toastify';
 
 class TreeStore {
     @observable tree;
     @observable load = false;
+    @observable selected;
 
     constructor() {
         makeObservable(this);
@@ -56,6 +57,10 @@ class TreeStore {
             deleteNode,
             'An error occurred while deleting the node'
         )(id);
+    }
+
+    @action setSelected(id) {
+        this.selected = id;
     }
 }
 

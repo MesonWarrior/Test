@@ -16,7 +16,7 @@ export const ContentModal = ({ action, actionName, children }) => {
     };
 
     return (
-        <Modal>
+        <Modal closeModal={closeModal}>
             <div className={s.container} onClick={modalHandler}>
                 <h6 className={s.title}>{actionName}</h6>
                 <form onSubmit={actionHandler}>
