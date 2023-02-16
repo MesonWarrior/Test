@@ -1,13 +1,9 @@
 import { Modal } from '../modal/modal';
-import s from '../modal/styles.module.scss';
 import { useModalContext } from '../../contexts/modal-context';
+import s from '../modal/styles.module.scss';
 
 export const ContentModal = ({ action, actionName, children }) => {
     const { closeModal } = useModalContext();
-
-    const closeHandler = () => {
-        closeModal();
-    };
 
     const actionHandler = (e) => {
         e.preventDefault();
@@ -26,7 +22,7 @@ export const ContentModal = ({ action, actionName, children }) => {
                 <form onSubmit={actionHandler}>
                     {children}
                     <div className={s.buttonsContainer}>
-                        <button onClick={closeHandler}>Cancel</button>
+                        <button onClick={closeModal}>Cancel</button>
                         <button className={s.action} type="submit">
                             {actionName}
                         </button>

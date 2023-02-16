@@ -1,4 +1,3 @@
-import s from './styles.module.scss';
 import { IconButton } from '../icon-button/icon-button';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
@@ -7,6 +6,7 @@ import { treeStore } from '../../stores/tree-store';
 import { useModalContext } from '../../contexts/modal-context';
 import { observer } from 'mobx-react-lite';
 import { modalStore } from '../../stores/modal-store';
+import s from './styles.module.scss';
 
 const ModalInput = observer(() => {
     const changeHandler = (e) => {

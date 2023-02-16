@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useSelectContext } from '../../contexts/select-context';
 import classNames from 'classnames';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import s from './styles.module.scss';
 import { Controls } from './controls';
+import s from './styles.module.scss';
 
 export const TreeNode = ({ id, name, children, isRoot = false }) => {
     const { select, setSelect } = useSelectContext();
