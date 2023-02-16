@@ -1,0 +1,66 @@
+$iconSize: 20px;
+$gap: $iconSize + 5px;
+
+.node {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        padding: 3px;
+        min-height: 30px;
+
+        .iconContainer {
+            width: $gap;
+
+            .icon {
+                transition: transform 200ms ease-in-out;
+                transform-origin: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                svg {
+                    width: $iconSize;
+                    height: $iconSize;
+                }
+            }
+
+            .isOpen {
+                transform: rotate(90deg);
+            }
+        }
+
+        .name {
+            margin: 0;
+        }
+    }
+
+    .selected {
+        background: lightblue;
+    }
+
+    .listContainer {
+        display: flex;
+        flex-direction: column;
+        padding-left: $gap;
+
+        .list {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.controls {
+    display: flex;
+}
+
+.modalInput {
+    .input {
+        width: 100%;
+        padding: 10px;
+    }
+}
