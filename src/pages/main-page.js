@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SelectContext } from '../contexts/select-context';
-import { TreeNode } from '../coponents/tree-node/tree-node';
+import { TreeNode } from '../components/tree-node/tree-node';
 import { treeStore } from '../stores/tree-store';
 import { observer } from 'mobx-react-lite';
 import s from './styles.module.scss';
