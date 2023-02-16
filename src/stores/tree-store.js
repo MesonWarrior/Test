@@ -14,7 +14,7 @@ class TreeStore {
     request =
         (method, errorMessage, reloadTree = true) =>
         async (...args) => {
-            this.load = true;
+            runInAction(() => (this.load = true));
             try {
                 const result = await method(...args);
                 if (reloadTree) {
