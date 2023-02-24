@@ -7,7 +7,7 @@ export const MainPage = observer(() => {
     return (
         <div className={s.main}>
             {treeStore.tree && (
-                <TreeNode name="Root" id={treeStore.tree.id} isRoot={true}>
+                <TreeNode name="Root" id={treeStore.tree.id} isRoot>
                     {treeStore.tree.children}
                 </TreeNode>
             )}
