@@ -1,6 +1,6 @@
 import { Modal } from '../modal/modal';
 import { useModalContext } from '../../contexts/modal-context';
-import s from '../modal/styles.module.scss';
+import s from '../styles.module.scss';
 
 export const ContentModal = ({ action, actionName, children }) => {
     const { closeModal } = useModalContext();
